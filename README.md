@@ -1,2 +1,2 @@
-# meditations
-This is a compilation of references and resources I've compiled throughout my studies on computer science related topics.
+# Meditations
+This is a collection of references and resources I've compiled throughout my studies on computer science related topics.
