@@ -1,12 +1,12 @@
 # Simple Docker Lab Setup
 
-### Objective
+## 1. Objective
 This document describes the procedure I've followed and resources I've used to setup a simple docker network populated with N Arch Linux containers for the purpose of
 networking related studies (iptables setup, tc, tunneling etc) on top a Arch Linux host. 
 
-### Procedure
+## 2. Procedure
 
-#### Docker Installation
+### 2.1 Docker Installation
 Docker installation:
 > pacman -S docker
 
@@ -22,7 +22,7 @@ Setting docker service to be started at boot:
 Testing docker setup (shall print "hello friend" on the screen)
 > docker run -it --rm archlinux bash -c "echo hello friend"
 
-#### Archlinux Image Setup
+### 2.2 Archlinux Image Setup
 Get files and scripts to build Arch Linux Docker Image:
 > git clone https://github.com/archlinux/archlinux-docker.git
 
@@ -58,14 +58,14 @@ Save changes made on the container to the image
 > docker commit <container_id> archlinux/full
 
 
-#### Setup Docker Network
+### 2.3 Setup Docker Network
 Create a docker subnet
 > docker network create --subnet=10.0.0.0/24 testnet
 
 To connect the docker to the created network all is necessary is to pass the following flag to the docker run command:
 > --net testnet
 
-#### Setup script to keep docker containers alive
+### 2.4 Setup script to keep docker containers alive
 A docker terminates as soon as the task it was spawned for terminates, therefore, one way to keep the docker alive is 
 to create a dummy script that has a infinite loop, such as the one below:
 
@@ -80,6 +80,13 @@ done
 To make the docker run the above script, all that is needed is to bind a folder inside the docker with folder where keepalive.sh is saved and
 to execute the script as the docker run command. 
 > docker run -v "/home/root/arch1":"/home/arch1" archlinux/full sh /home/arch1/keepalive.sh
+
+### 2.5 Spawning Dockers
+Detach from current console
+> docker run -v "/home/root/arch1":"/home/arch1" --net testnet --detach archlinux/full sh /home/arch1/keepalive.sh
+
+Run with max privileges (useful to deal with low level configs, such as ip_forwarding configurations)
+> docker run -v "/home/root/arch1":"/home/arch1" --net testnet --detach --privileged archlinux/full sh /home/arch1/keepalive.sh
 
 
 
