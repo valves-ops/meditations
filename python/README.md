@@ -5,5 +5,8 @@
  
  - [Good introduction to inheritance and composition](https://realpython.com/inheritance-composition-python/)
 
+## Machine Learning
+ - [Tensorflow GPU Setup](https://github.com/valves-ops/meditations/blob/master/python/machine_learning/tensorflow_gpu_setup.md)
+
 ## Others
 - [Building pip packages](https://dzone.com/articles/executable-package-pip-install)
