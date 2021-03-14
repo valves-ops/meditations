@@ -74,4 +74,9 @@ jt -t <theme_name>
 
 If you have the notebook already open, restart it for changes to take effect.
 
+Useful References:
+[Install Tensorflow-gpu 2.4.0 with Cuda 11.0 and CuDnn 8 Using Anaconda](https://medium.com/analytics-vidhya/install-tensorflow-gpu-2-4-0-with-cuda-11-0-and-cudnn-8-using-anaconda-8c6472c9653f)
+[Jeff Heaton Tensorflow Setup tutorial](https://github.com/jeffheaton/t81_558_deep_learning/blob/master/install/tensorflow-install-jul-2020.ipynb)
+[Jupyter Themes screenshots](https://github.com/dunovank/jupyter-themes/tree/master/screens)
+[Nbextensions Docs](https://jupyter-contrib-nbextensions.readthedocs.io/en/latest/install.html)
 
