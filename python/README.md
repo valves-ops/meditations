@@ -5,6 +5,10 @@
  
  - [Good introduction to inheritance and composition](https://realpython.com/inheritance-composition-python/)
 
+## Celery
+ - [Asynchronous Tasks with Django and Celery](https://testdriven.io/courses/django-celery/)
+ - [Handling Periodic Tasks in Django with Celery and Docker](https://testdriven.io/blog/django-celery-periodic-tasks/)
+
 ## Machine Learning
  - [Tensorflow GPU Setup](https://github.com/valves-ops/meditations/blob/master/python/machine_learning/tensorflow_gpu_setup.md)
 
