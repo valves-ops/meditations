@@ -9,6 +9,18 @@ alias makemigrations="python manage.py makemigrations"
 alias migrate="python manage.py migrate"
 
 ## Git
+git_current_branch () {
+        local ref
+        ref=$(command git symbolic-ref --quiet HEAD 2> /dev/null) 
+        local ret=$? 
+        if [[ $ret != 0 ]]
+        then
+                [[ $ret == 128 ]] && return
+                ref=$(command git rev-parse --short HEAD 2> /dev/null)  || return
+        fi
+        echo ${ref#refs/heads/}
+}
+
 alias grum="git checkout master && git pull origin master && git checkout - && git rebase master"
 alias gpoh="git push origin HEAD"
 alias gpfoh="git push -f origin HEAD"
