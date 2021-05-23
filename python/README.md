@@ -14,3 +14,4 @@
 
 ## Others
 - [Building pip packages](https://dzone.com/articles/executable-package-pip-install)
+- [Intro to Pyenv](https://realpython.com/intro-to-pyenv/)
